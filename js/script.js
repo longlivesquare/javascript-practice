@@ -5,6 +5,21 @@ of code */
 
 
 function test() {
-    console.log("Steven Duran");
-console.log("I love me some tri tip");
+    countLetters("supercalifragelousexpialedocious");
+    displayAnyNum();
+}
+
+function countLetters(word) {
+    console.log(word.length);
+}
+
+function displayAnyNum(){
+    num = Math.random();
+    console.log(num);
+    console.log(typeof(num));
+}
+
+function displayBigInt(myBigInt){
+    console.log(myBigInt);
+    console.log(typeof(myBigInt))
 }
