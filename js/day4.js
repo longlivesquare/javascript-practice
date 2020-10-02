@@ -1,18 +1,17 @@
-let x = NaN;
-let y = NaN;
-
-while(isNaN(x)) {
-  x = parseInt(prompt("Enter a number"));
-  if (isNaN(x)) {
-    alert("Not a number. Try again")
-  }
+function promptForNumber() {
+    let x = NaN;
+    while(isNaN(x)) {
+        x = parseInt(prompt("Enter a number"));
+        if (isNaN(x)) {
+          alert("Not a number. Try again")
+        }
+      }
+      x = Math.max(-100, x);
+      x = Math.min(100, x);
+      return x
 }
 
-while(isNaN(y)) {
-  y = parseInt(prompt("Enter another number"))
-  if(isNaN(y)) {
-    alert("Not a number. Try again");''
-  }
-}
+let x = promptForNumber();
+let y = promptForNumber();
 
 x > y ? alert(x + " is greater") : x < y ? alert(y + " is greater") : alert("They are equal");
