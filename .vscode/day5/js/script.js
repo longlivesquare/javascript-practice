@@ -3,6 +3,7 @@ const A = 65;
 const z = 122;
 
 function verifyPWRegEx(pw, regex=re) {
+    console.log(pw);
     let ok = regex.exec(pw);
     if(!ok) {
         console.log("Invalid password");
@@ -18,12 +19,21 @@ function verifyPW(pw) {
     function checkLength(pw, min=6, max=20) {
         return pw.length >= min && pw.length <= max;
     }
-
+    let error = document.getElementById("error")
+    error.innerHTML = "";
     if (!checkLength(pw)) {
-        console.error("Paswword must have at least 6 characters and no more than 20");
+        error.innerHTML += "Password must be between 6 and 20 characters<br>"
     } else if(!checkLetter(pw)) {
-        console.error("Password must start witha letter");
+        error.innerHTML = "Password must start with a letter";
     } else {
         console.log("Password satisfies the parameters.");
+    }
+}
+
+function evenOdd(num) {
+    if (num%2) {
+        console.log(num + " is odd");
+    } else {
+        console.log(num + " is even");
     }
 }

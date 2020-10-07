@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <form action="#">
         <input id="pw">
-        <button onclick="verifyPW(document.getElementById('pw'));">Check</button>
+        <button onclick="verifyPW(document.getElementById('pw').value);">Check</button>
     </form>
+    <div id="error"></div>
 </body>
 </html>
