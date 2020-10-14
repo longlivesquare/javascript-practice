@@ -55,9 +55,18 @@ function dispList() {
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = gItem.inCart;
-        
+
         newItem.appendChild(checkbox);
-        checkbox.addEventListener("click", toggleTask);
+        checkbox.addEventListener("click", function(){
+            if (!this.checked) {
+                this.parentElement.className = "";
+                gItem.inCart = false;
+            }
+            else {
+                this.parentElement.className = "finished";
+                gItem.inCart = true;
+            }
+        });
 
         newItem.appendChild(document.createTextNode(gItem.count + " " + gItem.item));
         gList.appendChild(newItem)
@@ -82,5 +91,6 @@ function toggleTask() {
     }
     else {
         this.parentElement.className = "finished";
+
     }
 }
